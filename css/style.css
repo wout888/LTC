@@ -319,25 +319,21 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  display: flex;
+  flex-wrap: wrap;
   max-width: var(--max-width);
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
 
 .grid-list li {
+  flex: 1 1 33.333%;
+  box-sizing: border-box;
   color: var(--ivory);
   padding: 14px 18px;
   border-bottom: 1px solid var(--line);
   border-right: 1px solid var(--line);
   font-size: 0.95rem;
-}
-
-.grid-list li:last-child {
-  grid-column: 1 / -1;
-  text-align: center;
 }
 
 /* Pull statement (Why We're Different) */
@@ -480,8 +476,8 @@ a {
     border-top: 1px solid var(--line);
   }
 
-  .grid-list {
-    grid-template-columns: repeat(2, 1fr);
+  .grid-list li {
+    flex-basis: 50%;
   }
 
   .hero {
@@ -490,12 +486,8 @@ a {
 }
 
 @media (max-width: 480px) {
-  .grid-list {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-list li:last-child {
-    text-align: left;
+  .grid-list li {
+    flex-basis: 100%;
   }
 
   .footer-inner {
