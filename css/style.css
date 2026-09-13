@@ -193,6 +193,7 @@ a {
     radial-gradient(ellipse 900px 500px at 15% -10%, rgba(182, 144, 92, 0.08), transparent 60%),
     var(--bg);
   overflow: hidden;
+  scroll-margin-top: 90px;
 }
 
 .hero-mark {
@@ -223,6 +224,7 @@ a {
 .section {
   padding: 88px 0;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 90px;
 }
 
 .section-alt {
@@ -331,6 +333,11 @@ a {
   border-bottom: 1px solid var(--line);
   border-right: 1px solid var(--line);
   font-size: 0.95rem;
+}
+
+.grid-list li:last-child {
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
 /* Pull statement (Why We're Different) */
@@ -485,6 +492,10 @@ a {
 @media (max-width: 480px) {
   .grid-list {
     grid-template-columns: 1fr;
+  }
+
+  .grid-list li:last-child {
+    text-align: left;
   }
 
   .footer-inner {
